@@ -4,285 +4,204 @@ Use `tf.data.experimental.group_by_window(...)`.
 WARNING:tensorflow:From nmt/model_helper.py:402: __init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
 Instructions for updating:
 This class is deprecated, please use tf.nn.rnn_cell.LSTMCell, which supports all the feature this cell currently has. Please replace the existing code with tf.nn.rnn_cell.LSTMCell(name='basic_lstm_cell').
-2019-11-28 21:49:32.693296: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 21:49:32.693325: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 21:49:32.693364: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 21:57:08.818394: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 21:57:08.818410: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 21:57:08.818433: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 21:57:08.945255: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 21:57:08.945276: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 21:57:08.945618: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:04:54.775395: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:04:54.775461: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:04:54.775405: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:04:54.905947: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:04:54.905947: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:04:54.905954: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:05:42.365418: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:05:42.365431: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:05:42.365615: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:05:42.476155: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:05:42.476160: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:05:42.476195: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:13:06.565017: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:13:06.565189: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:13:06.565219: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:13:06.667336: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:13:06.667336: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:13:06.667460: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:20:50.033057: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:20:50.033063: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:20:50.033174: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:20:50.164087: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:20:50.164088: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:20:50.164147: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:22:17.225867: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:22:17.225867: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:22:17.225888: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:22:17.363167: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:22:17.363197: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:22:17.363199: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:07.510795: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:07.510857: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:29:07.510884: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:07.662617: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:29:07.662624: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:07.662624: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:19.106458: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:19.106541: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:29:19.106575: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:19.203518: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:29:19.203594: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:29:19.203582: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:37:23.050590: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:37:23.050669: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:37:23.050623: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:37:23.196220: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:37:23.196238: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:37:23.196314: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:39:27.660795: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:39:27.660799: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:39:27.660806: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:39:27.769369: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:39:27.769556: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:39:27.769556: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:45:37.233717: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:45:37.233784: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:45:37.233722: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:45:37.346822: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
-2019-11-28 22:45:37.346822: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-2019-11-28 22:45:37.346827: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
-m algorithm algorithm algorithm graph graph retrospect retrospect retrospect retrospect retrospect retrospect retrospect retrospect incorporated incorporated
-  created eval model with fresh parameters, time 0.12s
-  eval dev: perplexity 17193.82, time 5s, Thu Nov 28 21:49:27 2019.
-  eval test: perplexity 17193.83, time 5s, Thu Nov 28 21:49:32 2019.
-  created infer model with fresh parameters, time 0.12s
-# Start step 0, lr 1, Thu Nov 28 21:49:32 2019
+2019-11-29 17:19:12.016278: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:19:12.016455: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:19:12.016475: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:27:12.620852: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:27:12.621101: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:27:12.621189: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:27:12.732653: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:27:12.732674: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:27:12.732693: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:34:49.667007: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:34:49.667049: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:34:49.667210: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:34:49.808878: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:34:49.808965: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:34:49.808878: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:00.864013: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:00.864037: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:00.864049: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:00.983591: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:00.983605: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:00.983605: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:11.249158: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:11.249168: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:11.249158: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:43.307246: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:43.307247: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:43.307298: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:43.466292: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:43.466296: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:43.466303: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:53.688633: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 17:35:53.688720: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 17:35:53.688665: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+ell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 17191), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 4, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 17191), 
+# log_file=tmp/nmt_attention_model_VI_s10000_l4_u128/log_1575058739
+  loaded train model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-8000, time 0.27s
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-8000, time 0.13s
+  # 28
+    src: Sau ba tháng trong trại tị nạn tập trung , chúng tôi đặt chân tới Melbourne .
+    ref: After three months in a refugee camp , we landed in Melbourne .
+    nmt: In the last 20 years , we &apos;ve got to go to the <unk> .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-8000, time 0.14s
+  eval dev: perplexity 58.45, time 5s, Fri Nov 29 17:19:06 2019.
+  eval test: perplexity 66.44, time 4s, Fri Nov 29 17:19:11 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-8000, time 0.07s
+# External evaluation, global step 8000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_dev
+  done, num sentences 1553, num translations per input 1, time 15s, Fri Nov 29 17:19:27 2019.
+  bleu dev: 2.7
+  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
+# External evaluation, global step 8000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_test
+  done, num sentences 1268, num translations per input 1, time 14s, Fri Nov 29 17:19:43 2019.
+  bleu test: 2.2
+  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
+# Start step 8000, lr 1, Fri Nov 29 17:19:43 2019
 # Init train iterator, skipping 0 elements
-  step 100 lr 1 step-time 0.48s wps 5.70K ppl 50015.38 gN 90.00 bleu 0.00, Thu Nov 28 21:50:21 2019
-  step 200 lr 1 step-time 0.45s wps 6.32K ppl 7373.11 gN 39.36 bleu 0.00, Thu Nov 28 21:51:05 2019
-  step 300 lr 1 step-time 0.45s wps 6.20K ppl 9992.43 gN 44.60 bleu 0.00, Thu Nov 28 21:51:51 2019
-  step 400 lr 1 step-time 0.45s wps 6.19K ppl 5593.93 gN 40.21 bleu 0.00, Thu Nov 28 21:52:36 2019
-  step 500 lr 1 step-time 0.45s wps 6.18K ppl 1388.70 gN 21.40 bleu 0.00, Thu Nov 28 21:53:20 2019
-  step 600 lr 1 step-time 0.45s wps 6.16K ppl 658.44 gN 8.20 bleu 0.00, Thu Nov 28 21:54:06 2019
-  step 700 lr 1 step-time 0.45s wps 6.24K ppl 473.08 gN 5.34 bleu 0.00, Thu Nov 28 21:54:51 2019
-  step 800 lr 1 step-time 0.46s wps 6.13K ppl 425.54 gN 5.36 bleu 0.00, Thu Nov 28 21:55:37 2019
-  step 900 lr 1 step-time 0.45s wps 6.13K ppl 369.08 gN 4.52 bleu 0.00, Thu Nov 28 21:56:22 2019
-  step 1000 lr 1 step-time 0.46s wps 6.13K ppl 342.25 gN 4.32 bleu 0.00, Thu Nov 28 21:57:08 2019
-# Save eval, global step 1000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-1000, time 0.09s
-  # 712
-    src: Và trong vòng chừng một tiếng rưỡi , hai tiếng sau đó , bà bắt đầu thấy dễ chịu hơn .
-    ref: And over the course of the next hour and a half or two , she started to feel better .
-    nmt: I &apos;re a a a a a a a a a a a a a a .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-1000, time 0.08s
-  eval dev: perplexity 266.98, time 5s, Thu Nov 28 21:57:14 2019.
-  eval test: perplexity 286.86, time 5s, Thu Nov 28 21:57:19 2019.
-  step 1100 lr 1 step-time 0.45s wps 6.26K ppl 318.79 gN 4.33 bleu 0.00, Thu Nov 28 21:58:04 2019
-  step 1200 lr 1 step-time 0.45s wps 6.21K ppl 289.89 gN 3.99 bleu 0.00, Thu Nov 28 21:58:49 2019
-  step 1300 lr 1 step-time 0.46s wps 6.21K ppl 272.07 gN 4.04 bleu 0.00, Thu Nov 28 21:59:35 2019
-  step 1400 lr 1 step-time 0.46s wps 6.19K ppl 253.66 gN 4.30 bleu 0.00, Thu Nov 28 22:00:21 2019
-  step 1500 lr 1 step-time 0.45s wps 6.19K ppl 232.76 gN 4.25 bleu 0.00, Thu Nov 28 22:01:07 2019
-  step 1600 lr 1 step-time 0.45s wps 6.30K ppl 223.32 gN 4.11 bleu 0.00, Thu Nov 28 22:01:52 2019
-  step 1700 lr 1 step-time 0.46s wps 6.15K ppl 211.49 gN 3.89 bleu 0.00, Thu Nov 28 22:02:37 2019
-  step 1800 lr 1 step-time 0.46s wps 6.26K ppl 201.02 gN 3.99 bleu 0.00, Thu Nov 28 22:03:23 2019
-  step 1900 lr 1 step-time 0.44s wps 6.20K ppl 194.33 gN 3.79 bleu 0.00, Thu Nov 28 22:04:07 2019
-  step 2000 lr 1 step-time 0.46s wps 6.20K ppl 185.88 gN 3.66 bleu 0.00, Thu Nov 28 22:04:54 2019
-# Save eval, global step 2000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-2000, time 0.08s
-  # 349
-    src: Còn có một dòng rất điên rồ về việc làm thế nào mà không hề có sự đúng đắn trên đất nước này Tất cả đều sai trái .
-    ref: There was a crazy line in there about how there &apos;s no conduct in this county , it &apos;s all misconduct .
-    nmt: And this is the other , and we can see the world , &quot; &quot; &quot; <unk> , &quot; &quot; &quot; <unk> .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-2000, time 0.08s
-  eval dev: perplexity 141.91, time 5s, Thu Nov 28 22:05:00 2019.
-  eval test: perplexity 158.50, time 4s, Thu Nov 28 22:05:05 2019.
-# Finished an epoch, step 2085. Perform external evaluation
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-2000, time 0.06s
-  # 313
-    src: Khi tôi nói hết ý của mình , bà ấy nhìn tôi và nói &quot; ừm , ừm , ừm &quot;
-    ref: I gave her my whole rap , and when I finished she looked at me and she said , &quot; Mmm mmm mmm . &quot;
-    nmt: And this is the other , and we can see the world .
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-2000, time 0.07s
-# External evaluation, global step 2000
+  step 8100 lr 1 step-time 0.48s wps 5.80K ppl 66.65 gN 3.68 bleu 2.74, Fri Nov 29 17:20:31 2019
+  step 8200 lr 1 step-time 0.44s wps 6.36K ppl 66.14 gN 3.74 bleu 2.74, Fri Nov 29 17:21:15 2019
+  step 8300 lr 1 step-time 0.44s wps 6.29K ppl 65.78 gN 3.72 bleu 2.74, Fri Nov 29 17:21:59 2019
+  step 8400 lr 1 step-time 0.44s wps 6.35K ppl 67.87 gN 3.72 bleu 2.74, Fri Nov 29 17:22:43 2019
+  step 8500 lr 1 step-time 0.46s wps 6.26K ppl 68.10 gN 3.83 bleu 2.74, Fri Nov 29 17:23:28 2019
+  step 8600 lr 1 step-time 0.45s wps 6.33K ppl 67.71 gN 3.81 bleu 2.74, Fri Nov 29 17:24:13 2019
+  step 8700 lr 1 step-time 0.45s wps 6.26K ppl 65.27 gN 3.75 bleu 2.74, Fri Nov 29 17:24:58 2019
+  step 8800 lr 1 step-time 0.44s wps 6.24K ppl 64.56 gN 3.72 bleu 2.74, Fri Nov 29 17:25:42 2019
+  step 8900 lr 1 step-time 0.45s wps 6.33K ppl 67.51 gN 3.89 bleu 2.74, Fri Nov 29 17:26:27 2019
+  step 9000 lr 1 step-time 0.44s wps 6.29K ppl 64.68 gN 3.74 bleu 2.74, Fri Nov 29 17:27:11 2019
+# Save eval, global step 9000
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-9000, time 0.08s
+  # 829
+    src: Tôi không phải rô-bốt ; không phải lần nào tôi cũng theo y một qui trình .
+    ref: I &apos;m not a robot ; I don &apos;t do things the same way each time .
+    nmt: I don &apos;t know that , I don &apos;t know what I &apos;m going to do .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-9000, time 0.07s
+  eval dev: perplexity 52.14, time 5s, Fri Nov 29 17:27:18 2019.
+  eval test: perplexity 60.95, time 5s, Fri Nov 29 17:27:23 2019.
+  step 9100 lr 1 step-time 0.44s wps 6.34K ppl 65.99 gN 3.79 bleu 2.74, Fri Nov 29 17:28:07 2019
+  step 9200 lr 1 step-time 0.44s wps 6.36K ppl 66.46 gN 3.87 bleu 2.74, Fri Nov 29 17:28:52 2019
+  step 9300 lr 1 step-time 0.44s wps 6.31K ppl 64.42 gN 3.78 bleu 2.74, Fri Nov 29 17:29:36 2019
+  step 9400 lr 1 step-time 0.45s wps 6.31K ppl 64.93 gN 3.81 bleu 2.74, Fri Nov 29 17:30:21 2019
+  step 9500 lr 1 step-time 0.44s wps 6.27K ppl 63.54 gN 3.80 bleu 2.74, Fri Nov 29 17:31:05 2019
+  step 9600 lr 1 step-time 0.45s wps 6.34K ppl 65.37 gN 3.90 bleu 2.74, Fri Nov 29 17:31:50 2019
+  step 9700 lr 1 step-time 0.44s wps 6.32K ppl 63.53 gN 3.83 bleu 2.74, Fri Nov 29 17:32:35 2019
+  step 9800 lr 1 step-time 0.45s wps 6.36K ppl 64.71 gN 3.95 bleu 2.74, Fri Nov 29 17:33:20 2019
+  step 9900 lr 1 step-time 0.45s wps 6.38K ppl 65.33 gN 3.92 bleu 2.74, Fri Nov 29 17:34:04 2019
+  step 10000 lr 1 step-time 0.44s wps 6.38K ppl 62.70 gN 3.78 bleu 2.74, Fri Nov 29 17:34:49 2019
+# Save eval, global step 10000
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-10000, time 0.08s
+  # 464
+    src: Cái núi mảnh vụn này thực chất được thu thập bởi những ngư dân trong những lần họ đi biển đến những vùng chưa từng được đánh bắt trước đó .
+    ref: This mountain of debris is actually collected by fishers every time they go into an area that &apos;s never been fished .
+    nmt: This is a little bit of <unk> , and they were going to be able to get a lot of people who were going to be able to do it .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-10000, time 0.07s
+  eval dev: perplexity 53.75, time 5s, Fri Nov 29 17:34:55 2019.
+  eval test: perplexity 61.84, time 5s, Fri Nov 29 17:35:00 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-10000, time 0.08s
+  # 672
+    src: Tiện thể , đó là một cầu thủ đập bóng cứ 10 lần được 4 lần an toàn .
+    ref: That &apos;s somebody who hit , by the way , four times safely out of every 10 .
+    nmt: In fact , a little bit of a little bit of a little bit of a million dollars .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-10000, time 0.07s
+  eval dev: perplexity 53.75, time 5s, Fri Nov 29 17:35:06 2019.
+  eval test: perplexity 61.84, time 4s, Fri Nov 29 17:35:11 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-10000, time 0.07s
+# External evaluation, global step 10000
   decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_dev
-  done, num sentences 1553, num translations per input 1, time 14s, Thu Nov 28 22:05:57 2019.
-  bleu dev: 0.5
+  done, num sentences 1553, num translations per input 1, time 15s, Fri Nov 29 17:35:26 2019.
+  bleu dev: 3.5
   saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-# External evaluation, global step 2000
+# External evaluation, global step 10000
   decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_test
-  done, num sentences 1268, num translations per input 1, time 13s, Thu Nov 28 22:06:11 2019.
-  bleu test: 0.7
+  done, num sentences 1268, num translations per input 1, time 15s, Fri Nov 29 17:35:42 2019.
+  bleu test: 2.7
   saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-  step 2100 lr 1 step-time 0.47s wps 5.75K ppl 180.49 gN 3.74 bleu 0.46, Thu Nov 28 22:06:22 2019
-  step 2200 lr 1 step-time 0.44s wps 6.38K ppl 169.84 gN 3.42 bleu 0.46, Thu Nov 28 22:07:05 2019
-  step 2300 lr 1 step-time 0.45s wps 6.27K ppl 168.95 gN 3.66 bleu 0.46, Thu Nov 28 22:07:50 2019
-  step 2400 lr 1 step-time 0.46s wps 6.21K ppl 162.41 gN 3.51 bleu 0.46, Thu Nov 28 22:08:36 2019
-  step 2500 lr 1 step-time 0.44s wps 6.19K ppl 158.65 gN 3.43 bleu 0.46, Thu Nov 28 22:09:20 2019
-  step 2600 lr 1 step-time 0.45s wps 6.25K ppl 154.49 gN 3.60 bleu 0.46, Thu Nov 28 22:10:05 2019
-  step 2700 lr 1 step-time 0.45s wps 6.22K ppl 148.25 gN 3.33 bleu 0.46, Thu Nov 28 22:10:50 2019
-  step 2800 lr 1 step-time 0.46s wps 6.17K ppl 148.76 gN 3.41 bleu 0.46, Thu Nov 28 22:11:35 2019
-  step 2900 lr 1 step-time 0.45s wps 6.27K ppl 149.62 gN 3.57 bleu 0.46, Thu Nov 28 22:12:20 2019
-  step 3000 lr 1 step-time 0.45s wps 6.22K ppl 144.77 gN 3.52 bleu 0.46, Thu Nov 28 22:13:05 2019
-# Save eval, global step 3000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-3000, time 0.08s
-  # 250
-    src: mà hãy nói với họ rằng chúng tôi đã phải lớn lên cùng với điều đó
-    ref: They tell me to say , &quot; No , tell them that we grew up with that . &quot;
-    nmt: And I was going to do that , I was going to do .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-3000, time 0.07s
-  eval dev: perplexity 110.37, time 5s, Thu Nov 28 22:13:12 2019.
-  eval test: perplexity 125.89, time 4s, Thu Nov 28 22:13:16 2019.
-  step 3100 lr 1 step-time 0.46s wps 6.21K ppl 146.14 gN 3.46 bleu 0.46, Thu Nov 28 22:14:02 2019
-  step 3200 lr 1 step-time 0.45s wps 6.26K ppl 142.48 gN 3.66 bleu 0.46, Thu Nov 28 22:14:48 2019
-  step 3300 lr 1 step-time 0.45s wps 6.32K ppl 141.07 gN 3.40 bleu 0.46, Thu Nov 28 22:15:32 2019
-  step 3400 lr 1 step-time 0.46s wps 6.23K ppl 136.08 gN 3.32 bleu 0.46, Thu Nov 28 22:16:18 2019
-  step 3500 lr 1 step-time 0.45s wps 6.18K ppl 131.43 gN 3.45 bleu 0.46, Thu Nov 28 22:17:03 2019
-  step 3600 lr 1 step-time 0.46s wps 6.18K ppl 133.68 gN 3.48 bleu 0.46, Thu Nov 28 22:17:49 2019
-  step 3700 lr 1 step-time 0.45s wps 6.21K ppl 129.18 gN 3.38 bleu 0.46, Thu Nov 28 22:18:34 2019
-  step 3800 lr 1 step-time 0.45s wps 6.23K ppl 126.55 gN 3.34 bleu 0.46, Thu Nov 28 22:19:20 2019
-  step 3900 lr 1 step-time 0.44s wps 6.26K ppl 124.06 gN 3.41 bleu 0.46, Thu Nov 28 22:20:04 2019
-  step 4000 lr 1 step-time 0.45s wps 6.22K ppl 119.88 gN 3.31 bleu 0.46, Thu Nov 28 22:20:49 2019
-# Save eval, global step 4000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-4000, time 0.08s
-  # 1431
-    src: Theo ước tính , có hơn 400 tỉ viên gạch LEGO đã được sản xuất -- hay 75 viên cho mỗi người trên trái đất .
-    ref: It &apos;s estimated that over 400 billion bricks have been produced -- or 75 bricks for every person on the planet .
-    nmt: So the first thing is that we can &apos;t be able to be the same thing that we &apos;re going to be the same thing .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-4000, time 0.07s
-  eval dev: perplexity 96.17, time 5s, Thu Nov 28 22:20:55 2019.
-  eval test: perplexity 108.46, time 5s, Thu Nov 28 22:21:00 2019.
-  step 4100 lr 1 step-time 0.45s wps 6.16K ppl 121.14 gN 3.57 bleu 0.46, Thu Nov 28 22:21:45 2019
-# Finished an epoch, step 4170. Perform external evaluation
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-4000, time 0.08s
-  # 1119
-    src: Mọi người đã xem ví dụ nhỏ của Ty về tiến hoá khi ông ấy đã thúc đẩy tiến hoá trên chương trình Nếp Xoắn ngay trước mắt mọi người .
-    ref: And you saw Ty &apos;s little evolutionary example where he sort of did a little bit of evolution on the Convolution program right before your eyes .
-    nmt: The same thing is that we can &apos;t be able to be the same thing , but I &apos;m going to be the same thing .
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-4000, time 0.08s
-# External evaluation, global step 4000
+# Final, step 10000 lr 1 step-time 0.44s wps 6.38K ppl 62.70 gN 3.78 dev ppl 53.75, dev bleu 3.5, test ppl 61.84, test bleu 2.7, Fri Nov 29 17:35:43 2019
+# Done training!, time 959s, Fri Nov 29 17:35:43 2019.
+# Start evaluating saved best models.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/best_bleu/translate.ckpt-10000, time 0.08s
+  # 827
+    src: Bây giờ cùng bệnh nhân bị đau ngực ấy , giả dụ anh ta ướt mồ hồi và nói lắm và thêm tí mùi cồn vào hơi thở của anh ta , và đột nhiên tiền sử bệnh của tôi bị ảnh hưởng xấu
+    ref: Now take the same patient with chest pain , make them moist and garrulous and put a little bit of alcohol on their breath , and suddenly my history is laced with contempt .
+    nmt: Now , he &apos;s going to be a girl , and he said , &quot; <unk> , I &apos;m not going to be a friend , and you &apos;re not going to be a little bit of a friend .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/best_bleu/translate.ckpt-10000, time 0.08s
+  eval dev: perplexity 53.75, time 5s, Fri Nov 29 17:35:48 2019.
+  eval test: perplexity 61.84, time 4s, Fri Nov 29 17:35:53 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/best_bleu/translate.ckpt-10000, time 0.07s
+# External evaluation, global step 10000
   decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_dev
-  done, num sentences 1553, num translations per input 1, time 16s, Thu Nov 28 22:22:33 2019.
-  bleu dev: 0.8
+  done, num sentences 1553, num translations per input 1, time 15s, Fri Nov 29 17:36:09 2019.
+  bleu dev: 3.5
   saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-# External evaluation, global step 4000
+# External evaluation, global step 10000
   decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_test
-  done, num sentences 1268, num translations per input 1, time 15s, Thu Nov 28 22:22:50 2019.
-  bleu test: 0.5
+  done, num sentences 1268, num translations per input 1, time 15s, Fri Nov 29 17:36:24 2019.
+  bleu test: 2.7
   saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-  step 4200 lr 1 step-time 0.47s wps 5.76K ppl 118.58 gN 3.60 bleu 0.82, Thu Nov 28 22:23:06 2019
-  step 4300 lr 1 step-time 0.45s wps 6.31K ppl 115.10 gN 3.49 bleu 0.82, Thu Nov 28 22:23:51 2019
-  step 4400 lr 1 step-time 0.45s wps 6.26K ppl 112.43 gN 3.45 bleu 0.82, Thu Nov 28 22:24:36 2019
-  step 4500 lr 1 step-time 0.44s wps 6.31K ppl 110.35 gN 3.31 bleu 0.82, Thu Nov 28 22:25:20 2019
-  step 4600 lr 1 step-time 0.46s wps 6.24K ppl 112.46 gN 3.47 bleu 0.82, Thu Nov 28 22:26:06 2019
-  step 4700 lr 1 step-time 0.45s wps 6.22K ppl 109.54 gN 3.45 bleu 0.82, Thu Nov 28 22:26:51 2019
-  step 4800 lr 1 step-time 0.45s wps 6.28K ppl 107.75 gN 3.45 bleu 0.82, Thu Nov 28 22:27:36 2019
-  step 4900 lr 1 step-time 0.45s wps 6.17K ppl 106.88 gN 3.46 bleu 0.82, Thu Nov 28 22:28:21 2019
-  step 5000 lr 1 step-time 0.45s wps 6.17K ppl 108.58 gN 3.48 bleu 0.82, Thu Nov 28 22:29:06 2019
-# Save eval, global step 5000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-5000, time 0.09s
-  # 557
-    src: Bây giờ không phải là những sự lụa chọn đó là những sự lựa chọn mà bất cứ ai trong chúng ta cũng khuyên cho mọi người khi bạn xem xét sự khả thi tài chính cho họ
-    ref: Now neither of these extreme decisions are the kinds of decisions that any of us would recommend for people when you &apos;re considering their future financial well-being .
-    nmt: Now I &apos;m going to show you that I &apos;m going to show you that I &apos;m going to show you what I &apos;m going to do about it .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-5000, time 0.09s
-  eval dev: perplexity 85.59, time 5s, Thu Nov 28 22:29:13 2019.
-  eval test: perplexity 101.32, time 5s, Thu Nov 28 22:29:18 2019.
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-5000, time 0.09s
-  # 1257
-    src: Làm thế nào để xử lý nó ? &quot;
-    ref: How do I get this removed ? &quot;
-    nmt: It &apos;s not a lot of people .
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-5000, time 0.07s
-# External evaluation, global step 5000
-  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_dev
-  done, num sentences 1553, num translations per input 1, time 14s, Thu Nov 28 22:29:33 2019.
-  bleu dev: 1.2
-  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-# External evaluation, global step 5000
-  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_test
-  done, num sentences 1268, num translations per input 1, time 14s, Thu Nov 28 22:29:48 2019.
-  bleu test: 0.8
-  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-  step 5100 lr 1 step-time 0.45s wps 6.19K ppl 103.58 gN 3.39 bleu 1.17, Thu Nov 28 22:30:33 2019
-  step 5200 lr 1 step-time 0.46s wps 6.19K ppl 105.91 gN 3.61 bleu 1.17, Thu Nov 28 22:31:20 2019
-  step 5300 lr 1 step-time 0.45s wps 6.20K ppl 107.22 gN 3.53 bleu 1.17, Thu Nov 28 22:32:05 2019
-  step 5400 lr 1 step-time 0.45s wps 6.25K ppl 105.44 gN 3.50 bleu 1.17, Thu Nov 28 22:32:51 2019
-  step 5500 lr 1 step-time 0.45s wps 6.20K ppl 101.88 gN 3.30 bleu 1.17, Thu Nov 28 22:33:36 2019
-  step 5600 lr 1 step-time 0.46s wps 6.21K ppl 102.96 gN 3.49 bleu 1.17, Thu Nov 28 22:34:21 2019
-  step 5700 lr 1 step-time 0.45s wps 6.22K ppl 101.83 gN 3.28 bleu 1.17, Thu Nov 28 22:35:06 2019
-  step 5800 lr 1 step-time 0.45s wps 6.28K ppl 101.31 gN 3.45 bleu 1.17, Thu Nov 28 22:35:51 2019
-  step 5900 lr 1 step-time 0.45s wps 6.15K ppl 97.10 gN 3.41 bleu 1.17, Thu Nov 28 22:36:36 2019
-  step 6000 lr 1 step-time 0.46s wps 6.25K ppl 100.40 gN 3.40 bleu 1.17, Thu Nov 28 22:37:22 2019
-# Save eval, global step 6000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-6000, time 0.09s
-  # 913
-    src: Video của Vậy là tôi nhận vé phạt vì đã không đi xe đạp trong đúng làn đường dành cho xe đạp , nhưng thường có những vật cản khiến bạn không đi đúng vào làn đường dành cho xe đạp .
-    ref: So I got a ticket for not riding in the bike lane , but often there are obstructions that keep you from properly riding in the bike lane .
-    nmt: The other thing is that I was going to talk about this , but I was going to talk about this , but I was going to do this .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-6000, time 0.08s
-  eval dev: perplexity 80.15, time 5s, Thu Nov 28 22:37:28 2019.
-  eval test: perplexity 89.89, time 4s, Thu Nov 28 22:37:33 2019.
-  step 6100 lr 1 step-time 0.45s wps 6.18K ppl 99.16 gN 3.29 bleu 1.17, Thu Nov 28 22:38:18 2019
-  step 6200 lr 1 step-time 0.45s wps 6.26K ppl 97.40 gN 3.47 bleu 1.17, Thu Nov 28 22:39:03 2019
-# Finished an epoch, step 6255. Perform external evaluation
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-6000, time 0.07s
-  # 1467
-    src: Và ở đây bạn sẽ thấy , cùng với vải nỉ , giấy và chai nước , Geordie đã làm ra ...
-    ref: Here you see , with felt and paper water bottles , we have Geordie making ...
-    nmt: And I was going to talk about this , but I was going to do this .
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-6000, time 0.07s
-# External evaluation, global step 6000
-  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_dev
-  done, num sentences 1553, num translations per input 1, time 15s, Thu Nov 28 22:39:43 2019.
-  bleu dev: 0.7
-  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-# External evaluation, global step 6000
-  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u128/output_test
-  done, num sentences 1268, num translations per input 1, time 14s, Thu Nov 28 22:39:58 2019.
-  bleu test: 1.0
-  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u128/hparams
-  step 6300 lr 1 step-time 0.47s wps 5.75K ppl 97.29 gN 3.67 bleu 1.17, Thu Nov 28 22:40:20 2019
-  step 6400 lr 1 step-time 0.45s wps 6.26K ppl 93.67 gN 3.54 bleu 1.17, Thu Nov 28 22:41:06 2019
-  step 6500 lr 1 step-time 0.44s wps 6.21K ppl 90.67 gN 3.45 bleu 1.17, Thu Nov 28 22:41:50 2019
-  step 6600 lr 1 step-time 0.45s wps 6.30K ppl 91.08 gN 3.38 bleu 1.17, Thu Nov 28 22:42:35 2019
-  step 6700 lr 1 step-time 0.45s wps 6.20K ppl 88.83 gN 3.41 bleu 1.17, Thu Nov 28 22:43:21 2019
-  step 6800 lr 1 step-time 0.45s wps 6.24K ppl 88.69 gN 3.38 bleu 1.17, Thu Nov 28 22:44:06 2019
-  step 6900 lr 1 step-time 0.45s wps 6.14K ppl 89.88 gN 3.40 bleu 1.17, Thu Nov 28 22:44:51 2019
-  step 7000 lr 1 step-time 0.46s wps 6.16K ppl 89.38 gN 3.41 bleu 1.17, Thu Nov 28 22:45:36 2019
-# Save eval, global step 7000
-  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-7000, time 0.10s
-  # 272
-    src: Tôi cho rằng nhân cách của chúng ta đang bị mai một
-    ref: Well I believe that our identity is at risk .
-    nmt: I &apos;m going to show you that the way it &apos;s .
-  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u128/translate.ckpt-7000, time 0.08s
-  eval dev: perplexity 71.05, time 5s, Thu Nov 28 22:45:42 2019.
-  eval test: perplexity 81.13, time 4s, Thu Nov 28 22:45:47 2019.
-  step 7100 lr 1 step-time 0.46s wps 6.19K ppl 89.43 gN 3.39 bleu 1.17, Thu Nov 28 22:46:33 2019
-  step 7200 lr 1 step-time 0.44s wps 6.34K ppl 88.53 gN 3.52 bleu 1.17, Thu Nov 28 22:47:17 2019
-  step 7300 lr 1 step-time 0.44s wps 6.19K ppl 85.98 gN 3.31 bleu 1.17, Thu Nov 28 22:48:01 2019
-  step 7400 lr 1 step-time 0.45s wps 6.27K ppl 88.45 gN 3.48 bleu 1.17, Thu Nov 28 22:48:47 2019
-  step 7500 lr 1 step-time 0.45s wps 6.21K ppl 90.93 gN 3.74 bleu 1.17, Thu Nov 28 22:49:32 2019
-  step 7600 lr 1 step-time 0.46s wps 6.21K ppl 87.79 gN 3.51 bleu 1.17, Thu Nov 28 22:50:18 2019
+# Best bleu, step 10000 lr 1 step-time 0.44s wps 6.38K ppl 62.70 gN 3.78 dev ppl 53.75, dev bleu 3.5, test ppl 61.84, test bleu 2.7, Fri Nov 29 17:36:24 2019
